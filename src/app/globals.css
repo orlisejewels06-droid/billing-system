@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+  }
+
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+/* A4 Print Styles matching Orlise Diamond Reference */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 6mm 8mm 6mm 8mm;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .invoice-a4-sheet {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+.invoice-border-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.invoice-border-table th,
+.invoice-border-table td {
+  border: 1px solid #1a1a1a;
+}
