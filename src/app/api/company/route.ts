@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { companySettingsSchema } from '@/lib/validation/schemas';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     const company = await db.getCompany();
